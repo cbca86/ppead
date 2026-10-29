@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trilha do PPEAD/PR/VPR</title>
+<style>
+:root{--bg:#f6f4ef;--fg:#23212b;--mut:#6b6877;--card:#fff;--bd:#e2ded6;--ok:#2f8f5b;--wip:#c98a1b;--late:#c2453d;--todo:#9a97a6;--acc:#6a4c93;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#17161c;--fg:#ece9f2;--mut:#a29fb0;--card:#222029;--bd:#34313e;--ok:#4cc084;--wip:#e5a93d;--late:#e8695f;--todo:#807d8e;--acc:#a98bd6}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:980px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;margin:0 0 4px}h2{font-size:1.1rem;margin:28px 0 12px}
+.sub{color:var(--mut);margin:0}
+.demo{background:var(--card);border:1px dashed var(--wip);border-radius:10px;padding:8px 12px;font-size:.85rem;margin:14px 0}
+.hero{display:flex;gap:24px;align-items:center;flex-wrap:wrap;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:20px}
+.ring{--p:0;width:130px;height:130px;border-radius:50%;background:conic-gradient(var(--acc) calc(var(--p)*1%),var(--bd) 0);display:grid;place-items:center;flex:none}
+.ring b{width:98px;height:98px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:1.7rem}
+.kpis{display:flex;gap:10px;flex-wrap:wrap;flex:1}
+.kpi{flex:1;min-width:90px;border:1px solid var(--bd);border-radius:12px;padding:10px 12px}
+.kpi b{display:block;font-size:1.5rem}.kpi span{font-size:.8rem;color:var(--mut)}
+.trail{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;position:relative}
+.stop{background:var(--card);border:2px solid var(--bd);border-radius:16px;padding:14px;cursor:pointer;text-align:left;font:inherit;color:inherit}
+.stop.on{border-color:var(--acc)}
+.stop .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;margin-right:8px}
+.bar{height:8px;background:var(--bd);border-radius:4px;overflow:hidden;margin-top:10px}.bar i{display:block;height:100%;background:var(--ok)}
+.filters{display:flex;gap:10px;flex-wrap:wrap}
+select{font:inherit;padding:8px 10px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--fg)}
+.badge{display:inline-block;font-size:.75rem;font-weight:600;padding:2px 10px;border-radius:99px;color:#fff}
+.s-Concluída{background:var(--ok)}.s-Em-andamento{background:var(--wip)}.s-Atrasada{background:var(--late)}.s-Não-iniciada{background:var(--todo)}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+summary{cursor:pointer;display:flex;gap:10px;align-items:center;flex-wrap:wrap;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary .t{flex:1;min-width:200px;font-weight:600}
+.meta{color:var(--mut);font-size:.85rem;margin-top:8px}
+.chip{display:inline-block;border:1px solid var(--bd);border-radius:6px;padding:0 6px;font-size:.78rem;margin-right:4px}
+.tl{border-left:3px solid var(--bd);margin-left:8px;padding-left:16px}
+.tl div{position:relative;padding:0 0 14px}
+.tl div::before{content:"";position:absolute;left:-23px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--c)}
+.tl small{color:var(--mut)}
+.wrap{overflow-x:auto}
+footer{color:var(--mut);font-size:.8rem;margin-top:32px}
+nav{display:flex;gap:8px;margin:16px 0;flex-wrap:wrap}nav button{font:inherit;padding:8px 18px;border-radius:99px;border:1px solid var(--bd);background:var(--card);color:var(--fg);cursor:pointer}nav button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px}.card h3{margin:0 0 6px;font-size:1rem}.card ul{margin:6px 0 0;padding-left:18px}.card p{margin:0}
+.q{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-bottom:10px}.q button{font:inherit;margin:8px 8px 0 0;padding:6px 14px;border-radius:99px;border:1px solid var(--acc);background:none;color:var(--fg);cursor:pointer}.q .r{margin:10px 0 0;color:var(--mut)}.aviso{border-left:4px solid var(--acc);background:var(--card);padding:10px 14px;border-radius:8px;margin:12px 0}
+</style></head><body><main>
+<h1>Trilha de Prevenção e Enfrentamento do Assédio e da Discriminação</h1>
+<p class="sub">Acompanhe o andamento das ações do PPEAD/PR/VPR na Presidência e na Vice-Presidência da República.</p>
+<nav><button class="on" data-v="painel">Andamento do Plano</button><button data-v="aprenda">O que é assédio?</button></nav>
+<div id="v-painel"><div class="demo" id="demo">Protótipo com dados de demonstração. Os status e percentuais abaixo são fictícios.</div>
+<section class="hero"><div class="ring" id="ring"><b id="pct">0%</b></div><div class="kpis" id="kpis"></div></section>
+<h2>A trilha: três etapas</h2><div class="trail" id="trail"></div>
+<h2>Ações do Plano</h2>
+<div class="filters"><select id="fa"></select><select id="fs"></select><select id="fe"></select></div>
+<div id="list" style="margin-top:12px"></div>
+<h2>Linha do tempo dos prazos</h2><div class="tl" id="tl"></div></div>
+<div id="v-aprenda" hidden>
+<h2>O que é assédio e discriminação?</h2>
+<div class="cards">
+<div class="card"><h3>Assédio moral</h3><p>Conduta abusiva, em geral repetida, que atinge a dignidade e a saúde emocional de quem trabalha.</p><ul><li>Humilhações, gritos e ofensas</li><li>Isolamento e exclusão da equipe</li><li>Críticas públicas e constantes</li><li>Ameaças ou punições veladas, como esvaziar as tarefas</li></ul></div>
+<div class="card"><h3>Assédio sexual</h3><p>Condutas de natureza sexual não desejadas, que constrangem e criam um ambiente hostil.</p><ul><li>Insinuações, comentários e “cantadas” insistentes</li><li>Toques ou convites indesejados</li><li>Pressão ou chantagem por vantagem sexual</li><li>Mensagens e imagens de cunho sexual</li></ul></div>
+<div class="card"><h3>Discriminação</h3><p>Tratamento desigual ou prejudicial por características pessoais.</p><ul><li>Gênero, raça ou etnia</li><li>Orientação sexual e identidade de gênero</li><li>Deficiência e idade</li><li>O Plano dá atenção especial a mulheres, pessoas negras, indígenas, com deficiência, idosas e LGBTQIA+</li></ul></div>
+</div>
+<div class="aviso"><b>Cobrar não é assediar.</b> Metas, prazos, feedback respeitoso e orientações legítimas fazem parte da gestão. O problema começa quando há abuso, humilhação, perseguição ou desrespeito à dignidade.</div>
+<h2>Reflita: pode ser assédio?</h2><div id="quiz"></div>
+<h2>Se você passou por isso</h2>
+<div class="cards">
+<div class="card"><h3>1. Acolhimento</h3><p>Você pode conversar com a Rede de Acolhimento: Ouvidoria-Geral, Coordenação-Geral de Saúde, unidades de gestão de pessoas e comissões de ética. O acolhimento vem antes de qualquer denúncia, não depende dela e respeita o seu tempo e as suas escolhas.</p></div>
+<div class="card"><h3>2. Proteção</h3><p>Podem ser avaliadas medidas para proteger você, como acompanhamento psicológico, ajuste de jornada, trabalho em outro local ou mudança de unidade, de acordo com a sua vontade e o seu consentimento.</p></div>
+<div class="card"><h3>3. Denúncia</h3><p>O canal oficial é a plataforma <b>Fala.BR</b>. Pode denunciar quem sofreu ou quem presenciou, com ou sem identificação. Informe a pessoa denunciada, a descrição da conduta, o local e a data. Nomes de testemunhas e registros ajudam.</p></div>
+</div>
+<h2>Se você presenciou</h2>
+<div class="card"><p>Testemunhas também podem denunciar e acolher. Ofereça escuta sem pressionar, respeite o que a pessoa quer fazer e preserve o sigilo. Quem sofre retaliação por denunciar pode registrar esse fato como uma nova denúncia no Fala.BR.</p></div>
+<h2>Para quem lidera equipes</h2>
+<div class="card"><ul><li>Reconheça sinais: isolamento, queda de rendimento, afastamentos frequentes</li><li>Encaminhe os casos à Rede de Acolhimento ou à Ouvidoria, com sigilo</li><li>Proteja a pessoa afetada e evite expô-la ou revitimizá-la</li><li>Dê o exemplo de um ambiente respeitoso e inclusivo</li></ul></div>
+<div class="aviso">Registrar uma denúncia com informações sabidamente falsas pode levar a medidas administrativas e penais. Relate os fatos conforme a verdade. Para saber mais, consulte o Guia Lilás, do Governo Federal.</div>
+</div>
+<footer>Este painel mostra apenas o andamento das ações do Plano. Não contém dados de pessoas nem de casos concretos. Fonte: Resolução CIG/PR nº 8, de 29/04/2026.</footer>
+</main>
+<script>
+// Para conectar ao Google Sheets: Arquivo > Compartilhar > Publicar na Web > CSV, e cole o link abaixo.
+const CONFIG={sheetCsvUrl:""};
+const EMBUTIDO=`id,eixo,acao,resumo_simples,areas,periodicidade,prazo,status,percentual,observacoes,evidencia_url,atualizado_em
+1,Prevenção,Definir calendário de campanhas de sensibilização,Cartazes e cards nos elevadores e folders para falar de assédio e discriminação e divulgar os canais de acolhimento.,USI;SA;OUVPR,Anual,2026-12-31,Em andamento,60,Dado de demonstração,,2026-10-20
+2,Prevenção,Capacitar para atuação em programas de inclusão e combate ao assédio,Formar pessoas e fortalecer a rede de acolhimento para elevar o letramento sobre o tema.,USI,Anual,2026-12-31,Em andamento,40,Dado de demonstração,,2026-10-20
+3,Prevenção,Incluir necessidades de desenvolvimento sobre assédio no Plano de Desenvolvimento de Pessoas,Garantir que cursos sobre assédio e discriminação entrem na capacitação anual.,SA;OUVPR;USI,Anual (1º semestre),2026-06-30,Concluída,100,Dado de demonstração,,2026-06-25
+4,Prevenção,Incluir percepções sobre assédio nas pesquisas de bem-estar,Ouvir os trabalhadores para melhorar as estratégias de enfrentamento.,SA,Bienal,2026-12-31,Não iniciada,0,Dado de demonstração,,2026-10-20
+5,Prevenção,Monitorar absenteísmo e adoecimento,Acompanhar dados agregados para entender a saúde do ambiente de trabalho.,SA;USI,Anual,2026-12-31,Em andamento,50,Dado de demonstração,,2026-10-20
+6,Prevenção,Promover ações de bem-estar,Ações que previnem o assédio e aumentam motivação e reconhecimento.,SA,Anual,2026-12-31,Em andamento,30,Dado de demonstração,,2026-10-20
+7,Acolhimento,Estruturar a Rede de Acolhimento,Definir quem acolhe e como: unidades que ouvem e orientam quem passou por assédio ou discriminação.,OUVPR;SA;UGP;CEPR;CEP,Única,2026-08-31,Em andamento,70,Dado de demonstração,,2026-10-20
+8,Acolhimento,Criar espaço de acolhimento com equipe multidisciplinar,Um lugar adequado e conhecido por todos para a primeira escuta.,SA,Única,2026-07-31,Concluída,100,Dado de demonstração,,2026-07-28
+9,Acolhimento,Avaliar extensão do convênio do MGI para atendimento psicológico,Verificar se o atendimento psicológico do MGI pode alcançar a Presidência.,SA,Única,2026-09-30,Não iniciada,0,Dado de demonstração,,2026-10-20
+10,Acolhimento,Criar banco de talentos para acolhimento,Ampliar o número de pessoas capacitadas para acolher.,SA,Única,2026-08-31,Em andamento,45,Dado de demonstração,,2026-10-20
+11,Acolhimento,Atuar em parceria com instituições de saúde,Oferecer atendimento psicológico qualificado em casos de assédio.,SA,Anual,2026-12-31,Não iniciada,0,Dado de demonstração,,2026-10-20
+12,Acolhimento,Definir protocolo de medidas acautelatórias,Opções para gestores protegerem a vítima de imediato e interromperem a violência.,USI;OUVPR;SA;UGP;CEPR;CEP,Única,2026-12-31,Em andamento,25,Dado de demonstração,,2026-10-20
+13,Tratamento de denúncias,Elaborar cartilha de fluxos e canais de acolhimento e denúncia,Guia simples de como acolher e denunciar para evitar subnotificação.,OUVPR;CORPR;USI,Única,2026-08-31,Em andamento,80,Dado de demonstração,,2026-10-20
+14,Tratamento de denúncias,Elaborar relatório das denúncias recebidas,Relatório agregado e sigiloso para avaliar o acesso aos canais e a eficiência do tratamento.,OUVPR;CORPR,Anual (até 31/jan),2027-01-31,Não iniciada,0,Dado de demonstração,,2026-10-20
+`;
+const $=id=>document.getElementById(id);
+function parseCSV(t){const r=[];let row=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];
+ if(q){if(c=='"'&&t[i+1]=='"'){f+='"';i++}else if(c=='"')q=false;else f+=c}
+ else if(c=='"')q=true;else if(c==","){row.push(f);f=""}
+ else if(c=="\n"){row.push(f);r.push(row);row=[];f=""}else if(c!="\r")f+=c}
+ if(f||row.length){row.push(f);r.push(row)}
+ const h=r.shift().map(x=>x.trim());return r.filter(x=>x.length>1).map(x=>Object.fromEntries(h.map((k,i)=>[k,(x[i]||"").trim()])))}
+async function carregar(){
+ if(CONFIG.sheetCsvUrl){try{const r=await fetch(CONFIG.sheetCsvUrl);if(r.ok){$("demo").hidden=true;return parseCSV(await r.text())}}catch(e){}}
+ return parseCSV(EMBUTIDO)}
+const hoje=new Date();
+function status(a){return a.status!="Concluída"&&new Date(a.prazo+"T23:59:59")<hoje?"Atrasada":a.status}
+const cor={"Concluída":"var(--ok)","Em andamento":"var(--wip)","Atrasada":"var(--late)","Não iniciada":"var(--todo)"};
+const fmt=d=>new Date(d+"T12:00:00").toLocaleDateString("pt-BR");
+let D=[],eixoSel="";
+function opts(el,t,vals){el.innerHTML=`<option value="">${t}</option>`+vals.map(v=>`<option>${v}</option>`).join("")}
+function render(){
+ const fa=$("fa").value,fs=$("fs").value,fe=eixoSel||$("fe").value;
+ const med=a=>+a.percentual||0;
+ const tot=Math.round(D.reduce((s,a)=>s+med(a),0)/D.length);
+ $("ring").style.setProperty("--p",tot);$("pct").textContent=tot+"%";
+ const cnt=k=>D.filter(a=>status(a)==k).length;
+ $("kpis").innerHTML=["Concluída","Em andamento","Não iniciada","Atrasada"].map(k=>`<div class="kpi"><b style="color:${cor[k]}">${cnt(k)}</b><span>${k=="Concluída"?"Concluídas":k=="Atrasada"?"Atrasadas":k}</span></div>`).join("");
+ const eixos=[...new Set(D.map(a=>a.eixo))];
+ $("trail").innerHTML=eixos.map((e,i)=>{const g=D.filter(a=>a.eixo==e),p=Math.round(g.reduce((s,a)=>s+med(a),0)/g.length);
+  return `<button class="stop ${eixoSel==e?"on":""}" data-e="${e}"><span class="n">${i+1}</span><b>${e}</b><div class="sub">${g.length} ações · ${p}% executado</div><div class="bar"><i style="width:${p}%"></i></div></button>`}).join("");
+ document.querySelectorAll(".stop").forEach(b=>b.onclick=()=>{eixoSel=eixoSel==b.dataset.e?"":b.dataset.e;$("fe").value=eixoSel;render()});
+ const L=D.filter(a=>(!fe||a.eixo==fe)&&(!fa||a.areas.split(";").includes(fa))&&(!fs||status(a)==fs));
+ $("list").innerHTML=L.map(a=>{const s=status(a);return `<details><summary><span class="t">${a.acao}</span><span class="badge s-${s.replace(" ","-")}">${s}</span><span class="sub">${a.percentual}%</span></summary>
+ <p>${a.resumo_simples}</p><div class="meta">Eixo: ${a.eixo} · Prazo: ${fmt(a.prazo)} (${a.periodicidade}) · Atualizado em ${fmt(a.atualizado_em)}</div>
+ <div class="meta">${a.areas.split(";").map(x=>`<span class="chip">${x}</span>`).join("")}</div>
+ ${a.observacoes?`<div class="meta">${a.observacoes}</div>`:""}${a.evidencia_url?`<div class="meta"><a href="${a.evidencia_url}">Ver evidência</a></div>`:""}</details>`}).join("")||"<p class='sub'>Nenhuma ação com esses filtros.</p>";
+ $("tl").innerHTML=[...D].sort((x,y)=>x.prazo.localeCompare(y.prazo)).map(a=>{const s=status(a);return `<div style="--c:${cor[s]}"><small>${fmt(a.prazo)} · ${s}</small><br>${a.acao}</div>`}).join("")}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button").forEach(x=>x.classList.toggle("on",x==b));$("v-painel").hidden=b.dataset.v!="painel";$("v-aprenda").hidden=b.dataset.v!="aprenda";scrollTo(0,0)});
+const QZ=[["Uma chefe cobra a entrega de um relatório no prazo combinado e dá um retorno objetivo, por e-mail, sobre os ajustes necessários.",0,"Em geral, não. Cobrança de resultados com respeito e clareza faz parte da gestão."],["Um colega é chamado por um apelido humilhante, todos os dias, diante da equipe, como “brincadeira”.",1,"Pode ser. Humilhação repetida e exposição pública podem configurar assédio moral, e o apelido pode ainda ter caráter discriminatório."],["Um superior faz insinuações sexuais mesmo depois de a pessoa dizer que não gosta e pede que ele pare.",1,"Pode ser assédio sexual. A insistência após a recusa é um sinal importante."],["Depois de comunicar a gravidez, uma servidora deixa de ser convidada para reuniões e projetos.",1,"Pode ser. O isolamento ligado a uma característica pessoal pode configurar discriminação e assédio moral."]];
+$("quiz").innerHTML=QZ.map((q,i)=>`<div class="q"><p>${q[0]}</p><button data-i="${i}" data-a="1">Pode ser assédio</button><button data-i="${i}" data-a="0">Em geral, não</button><p class="r" id="r${i}"></p></div>`).join("");
+$("quiz").onclick=e=>{const b=e.target.closest("button");if(!b)return;const q=QZ[b.dataset.i];$("r"+b.dataset.i).textContent=(+b.dataset.a==q[1]?"Isso mesmo. ":"Vale pensar de novo. ")+q[2]};
+carregar().then(d=>{D=d;
+ opts($("fa"),"Todas as áreas",[...new Set(D.flatMap(a=>a.areas.split(";")))].sort());
+ opts($("fs"),"Todos os status",["Concluída","Em andamento","Não iniciada","Atrasada"]);
+ opts($("fe"),"Todos os eixos",[...new Set(D.map(a=>a.eixo))]);
+ ["fa","fs"].forEach(i=>$(i).onchange=render);$("fe").onchange=()=>{eixoSel=$("fe").value;render()};render()});
+</script></body></html>
